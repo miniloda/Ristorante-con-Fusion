@@ -41,10 +41,13 @@
                     <h1>Ristorante con Fusion</h1>
                     <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
                 </div>
-                <div class="col-12 col-sm align-self-center">
+                <div class="col-12 col-sm-3 align-self-center">
                     <img src="img/logo.png" alt="company logo" class = "img-fluid">
                 </div>
+                <div class="col-sm-3 align-self-center">
+                    <a href = "#reserve" class="btn btn-warning d-block col-12 p-3">Reserve Table</a>
                 </div>
+            </div>
             </div>
         </div>
     </header>
@@ -59,7 +62,7 @@
                         <img class="d-flex mr-3 img-thumbnail align-self-center"
                                 src="img/uthappizza.png" alt="Uthappizza">
                         <div class="media-body">
-                            <h2 class="mt-0">Uthappizza</h2>
+                            <h2 class="mt-0">Uthappizza <span class="badge badge-danger">HOT</span>  <span class="badge badge-pill badge-secondary">$4.99</span></h2>
                             <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and
                                 Italian pizza, topped with Cerignola olives, ripe vine
                                 cherry tomatoes, Vidalia onion, Guntur chillies and
@@ -68,6 +71,7 @@
                 
             </div>
         </div>
+        </div>
 
 
         <div class = "row row-content align-items-center">
@@ -75,8 +79,14 @@
                 <h3>This Month's Promotions</h3>
             </div>
             <div class = "col col-sm col-md">
-                <h2>Weekend Grand Buffet</h2>
-                <p>Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
+                <div class="media">
+                    <div class="media-body">
+                        <h2 class="mt-0">Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h2>
+                        <p class = "d-none d-sm-block">Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
+                    </div>
+                    <img class="d-flex mr-3 img-thumbnail align-self-center"
+                            src="img/buffet.png" alt="Buffet">
+                </div>
             </div>
         </div>
 
@@ -85,10 +95,10 @@
                 <h3>Meet our Culinary Specialists</h3>
             </div>
             <div class = "col col-sm order-sm-first col-md">
-                                <div class="media">
-                    <img class="d-flex mr-3 img-thumbnail align-self-center"
-                            src="img/alberto.png" alt="Alberto Somayya">
+                <div class="media">
                     <div class="media-body">
+                        <img class="d-flex mr-3 img-thumbnail align-self-center"
+                                src="img/alberto.png" alt="Alberto Somayya">
                         <h2 class="mt-0">Alberto Somayya</h2>
                         <h4>Executive Chef</h4>
                         <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide
@@ -100,7 +110,70 @@
                 </div>
             </div>
         </div>
-    </div>
+        <div class="row row-content" id = "reserve">
+            <div class="align-self-center col-xl-8 col-12 offset-xl-2">
+            <div class="card">
+                <div class="card-header bg-warning text-white">
+                    <h3>Reserve a Table</h3>
+                    
+                </div>
+                <div class="card-body">
+                    <form action="" class="form-horizontal" role = "form">
+                        <fieldset>
+                        <div class="form-group row">
+                            <label class="col-sm-2 control-label">Number of Guests</label>
+                            <div class="col-sm-6 col-11">
+                                <label class="radio-inline mr-3"> <input type="radio" name="people" id="people1" value="1" checked> 1 </label>
+                                <label class="radio-inline mr-3"> <input type="radio" name="people" id="people2" value="2"> 2 </label>
+                                <label class="radio-inline mr-3"> <input type="radio" name="people" id="people3" value="3" disabled> 3 </label>
+                                <label class="radio-inline mr-3"> <input type="radio" name="people" id="people4" value="4" checked>4</label>
+                                <label class="radio-inline mr-3"> <input type="radio" name="people" id="people5" value="5"> 5 </label>
+                                <label class="radio-inline"> <input type="radio" name="people" id="people6" value="6" disabled> 6 </label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2">
+                                Date and Time
+                            </label>
+                            <div class="col-sm-4">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="reservationdate" placeholder="MM/DD/YYYY" />
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="reservationtime" placeholder="HH:MM AM/PM" />
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <!-- pop-up info -->
+                            <button type = "button" class="btn- btn-success rounded-circle px-2 " data-toggle = "tooltip" data-placement="top" title = "Changed the style to make it less vague. However, having date and time-picker would take a lot of time to construct">i</button>
+                        </div>
+                        </div>
+                        <!-- submit -->
+                        <div class="form-group row">
+                            <div class="offset-sm-1 col-sm-8">
+                                <button type="submit" class="btn btn-primary">
+                                    Reserve
+                                </button>
+                            </div>
+                        </div>
+
+                        </fieldset>
+                        
+                    </form>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
 
     <footer class = "footer">
         <div class = "container">
@@ -148,6 +221,12 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+}) 
+//  I added script in the html so that it is included when you check it: for the tooltip
+    </script>
 </body>
 
 </html>
