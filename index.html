@@ -30,7 +30,7 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"> <span class="fa fa-address-card fa-lg"></span>Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle = "modal" data-target = "#loginModal">
+                    <a id = "login">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>
@@ -171,11 +171,10 @@
                     <img src="img/logo.png" alt="company logo" class = "img-fluid">
                 </div>
                 <div class="col-sm-3 align-self-center">
-                    <a data-target = "#reserveModal" class="btn btn-warning d-block btn-sm p-sm-3 p-lg-2" data-toggle = "modal">Reserve Table</a>
+                    <a  class="btn btn-warning d-block btn-sm p-sm-3 p-lg-2" id = "reserve">Reserve Table</a>
                 </div>
             </div>
             </div>
-        </div>
     </header>
 
     <div class = "container">
@@ -186,31 +185,31 @@
                         <div class="carousel-item active">
                             <img src="img/uthappizza.png" alt="uthappizza" class="d-block img-fluid">
                             <div class="carousel-caption d-none d-md-block">
-                                <h2>Uthappizza <span class="badge badge-danger">HOT</span>  <span class="badge badge-pill badge-secondary">$4.99</span></h2>
-                                <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and
+                                <h1>Uthappizza <span class="badge badge-danger">HOT</span>  <span class="badge badge-pill badge-secondary">$4.99</span></h1>
+                                <h5 class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and
                                     Italian pizza, topped with Cerignola olives, ripe vine
                                     cherry tomatoes, Vidalia onion, Guntur chillies and
-                                    Buffalo Paneer.</p> 
+                                    Buffalo Paneer.</h5> 
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src = "img/buffet.png" classs = "d-block img-fluid" alt="buffet">
                             <div class="carousel-caption d-none d-md-block">
-                                <h2>Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h2>
-                                <p class = "d-none d-sm-block">Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
+                                <h1>Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h1>
+                                <h5 class = "d-none d-sm-block">Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </h5>
 
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src = "img/alberto.png" classs = "d-block img-fluid" alt="alberto">
                             <div class="carousel-caption d-none d-md-block">
-                                <h2>Alberto Somayya</h2>
-                                <h4>Executive Chef</h4>
-                                <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide
+                                <h1>Alberto Somayya</h1>
+                                <h2>Executive Chef</h2>
+                                <h5 class="d-none d-sm-block">Award winning three-star Michelin chef with wide
                                     International experience having worked closely with
                                     whos-who in the culinary world, he specializes in
                                     creating mouthwatering Indo-Italian fusion experiences.
-                                    </p>
+                                </h5>
 
                             </div>
                         </div>
@@ -226,14 +225,9 @@
                     <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
-                    <div class="btn-group" id="carouselButton">
-                        <button class="btn btn-danger btn-sm" id = "carousel-pause">
+                        <button class="btn btn-danger btn-sm" id = "carouselButton">
                             <span class="fa fa-pause"></span>
                         </button>
-                        <button class="btn btn-danger btn-sm" id = "carousel-play">
-                            <span class="fa fa-play"></span>
-                        </button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -344,15 +338,25 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(() => {
-            $('#mycarousel').carousel({interval: 2000});
-            $('#carousel-pause').click(() => {
-                $('#mycarousel').carousel('pause');
+            $('#mycarousel').carousel({interval: 5000});
+            $('#carouselButton').click(()=>{
+                if($('#carouselButton').children('span').hasClass('fa-pause')){
+                    $('#mycarousel').carousel('pause');
+                    $('#carouselButton').children('span').removeClass('fa-pause');
+                    $('#carouselButton').children('span').addClass('fa-play');
+                }else{
+                    $('#mycarousel').carousel('cycle');
+                    $('#carouselButton').children('span').removeClass('fa-play');
+                    $('#carouselButton').children('span').addClass('fa-pause');
+                }
+            });
+            $('#reserve').click(()=>{
+                $('#reserveModal').modal('show');
+            });
+            $('#login').click(()=>{
+                $('#loginModal').modal('show');
+            });
             })
-            $('#carousel-play').click(() => {
-                $('#mycarousel').carousel('cycle');
-            })
-            
-        })
     </script>
 </body>
 
